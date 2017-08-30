@@ -1,0 +1,47 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            Create Todo
+        </ion-title>
+        <ion-buttons start>
+            <button ion-button (click)="dismiss()">
+        <span ion-text color="primary" showWhen="ios">Cancel</span>
+        <ion-icon name="md-close" showWhen="android, windows"></ion-icon>
+      </button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div class="todo-alert-container" *ngIf="error">
+        <ion-chip color="danger" class="todo-alert">
+            <ion-icon name="alert"></ion-icon>
+            <ion-label>{{error}}</ion-label>
+        </ion-chip>
+    </div>
+    <ion-item>
+        <ion-label>Category</ion-label>
+        <ion-select [(ngModel)]="category" [compareWith]="compareCategory" [selectedText]="category?.name">
+            <ion-option *ngFor="let cat of categories" [value]="cat">{{cat.name}}</ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-item>
+        <ion-label color="primary" floating>Name</ion-label>
+        <ion-input [(ngModel)]="todo.name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Echéance</ion-label>
+        <ion-datetime max="{{maxDate}}" min="{{minDate}}" displayFormat="MMM DD, YYYY HH:mm" [(ngModel)]="dueDate"></ion-datetime>
+        <ion-icon class="remove-date-button" item-end name="close-circle" (click)=emptyDate()></ion-icon>
+    </ion-item>
+</ion-content>
+<ion-footer>
+    <ion-toolbar>
+        <ion-buttons left>
+            <button ion-button color="danger" (click)="dismiss()">Cancel</button>
+        </ion-buttons>
+        <ion-buttons right>
+            <button ion-button (click)="save()">Save</button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-footer>

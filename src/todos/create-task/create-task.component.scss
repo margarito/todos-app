@@ -1,0 +1,14 @@
+.task-alert-container {
+    position: relative;
+    text-align: center;
+    padding: 5px;
+}
+
+.task-alert {
+    position: relative;
+}
+
+.remove-date-button {
+    pointer-events: all;
+    z-index: 1;
+}

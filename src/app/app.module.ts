@@ -1,10 +1,11 @@
+import { SharedModule } from '../shared/shared.module';
+import { TodosModule } from '../todos/todos.module';
 import { NgModule, ErrorHandler } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
+import { APIPage } from '../pages/api/api';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 
@@ -15,19 +16,24 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   declarations: [
     MyApp,
     AboutPage,
-    ContactPage,
+    APIPage,
     HomePage,
     TabsPage
   ],
   imports: [
-    BrowserModule,
-    IonicModule.forRoot(MyApp)
+    TodosModule,
+    SharedModule,
+    IonicModule.forRoot(MyApp, {
+       tabsHideOnSubPages: true,
+       tabSubPages: false
+       
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     AboutPage,
-    ContactPage,
+    APIPage,
     HomePage,
     TabsPage
   ],

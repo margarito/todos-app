@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            Edit Category
+        </ion-title>
+        <ion-buttons start>
+            <button ion-button (click)="dismiss()">
+                <span ion-text color="primary" showWhen="ios">Cancel</span>
+                <ion-icon name="md-close" showWhen="android, windows"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-item>
+        <ion-label color="primary" floating>Name</ion-label>
+        <ion-input [(ngModel)]="category.name"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-input placeholder="Description" [(ngModel)]="category.description"></ion-input>
+    </ion-item>
+</ion-content>
+<ion-footer>
+    <ion-toolbar>
+        <ion-buttons left>
+            <button ion-button color="danger" (click)="dismiss()">Cancel</button>
+        </ion-buttons>
+        <ion-buttons right>
+            <button ion-button (click)="save()">Save</button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-footer>

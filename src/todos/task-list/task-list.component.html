@@ -1,0 +1,17 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>task list for {{todo.name}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-item *ngFor="let task of tasks">
+        <div item-content>
+            {{task.name}}
+        </div>
+        <ion-toggle item-end [(ngModel)]="task.isDone"></ion-toggle>
+    </ion-item>
+    <ion-fab bottom right (click)="createTask()">
+        <button ion-fab><ion-icon name="add"></ion-icon></button>
+    </ion-fab>
+</ion-content>
