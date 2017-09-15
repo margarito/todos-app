@@ -1,0 +1,33 @@
+<ion-list collapsable>
+    <ion-list-header collapsable-header>
+        <div item-start [ngSwitch]="testRunner.state">
+            <ion-icon name="ios-arrow-forward" *ngSwitchCase="'READY'"></ion-icon>
+            <ion-icon name="checkmark" color="secondary" *ngSwitchCase="'SUCCESS'"></ion-icon>
+            <ion-icon name="alert" color="danger" *ngSwitchCase="'FAIL'"></ion-icon>
+            <ion-spinner *ngSwitchCase="'RUNNING'"></ion-spinner>
+        </div>
+        <h1>{{title}}</h1>
+        <ion-icon item-end name="play" (click)="testRunner.run(); $event.stopPropagation()"></ion-icon>
+    </ion-list-header>
+    <ion-item *ngFor="let step of testRunner.steps">
+        <div item-start [ngSwitch]="step.state">
+            <ion-icon name="ios-arrow-forward" *ngSwitchCase="'READY'"></ion-icon>
+            <ion-icon name="checkmark" color="secondary" *ngSwitchCase="'SUCCESS'"></ion-icon>
+            <ion-icon name="alert" color="danger" *ngSwitchCase="'FAIL'"></ion-icon>
+            <ion-spinner *ngSwitchCase="'RUNNING'"></ion-spinner>
+        </div>
+        <div ion-content>
+            <markdown [data]="step.markdown">
+            </markdown>
+            <div *ngIf="step.result">
+                <h4>Result</h4>
+                <p>
+                    {{step.result}}
+                </p>
+            </div>
+        </div>
+        <div item-end>
+            {{step.duration}}
+        </div>
+    </ion-item>
+</ion-list>

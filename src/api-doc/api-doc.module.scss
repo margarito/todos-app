@@ -1,0 +1,66 @@
+@import 'node_modules/prismjs/themes/prism-okaidia';
+$cell-padding: 7px;
+$table-border: 1px solid #e6e6e6;
+app-model-creation,
+app-clause-composite,
+app-clause-group,
+app-clause-sub-query,
+app-clause-syntaxic,
+app-connector-cordova-sqlite-storage,
+app-connector-cordova-sqlite-storage-websql,
+app-initialization,
+app-query-create,
+app-query-delete,
+app-query-insert,
+app-query-raw,
+app-query-select,
+app-query-update {
+    .section-documentation {
+        padding-left: 20px;
+        padding-right: 20px;
+        code {
+            color: darkred;
+        }
+        pre code {
+            color: white;
+        }
+        p,
+        p code,
+        pre code,
+        td,
+        li {
+            font-size: 16px;
+        }
+        table {
+            width: 100%;
+            border-color: grey;
+            border-collapse: collapse;
+            border-spacing: 0;
+            thead {
+                font-size: 20px;
+                th {
+                    font-weight: normal;
+                    padding: $cell-padding;
+                }
+            }
+            tbody {
+                tr {
+                    border-top: $table-border;
+                    &:nth-child(odd) {
+                        background-color: #f4f4f4;
+                    }
+                    &:last-child {
+                        border-bottom: $table-border;
+                    }
+                    td {
+                        padding: $cell-padding;
+                        border-right: $table-border;
+                        &:last-child {
+                            border-right: 0px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

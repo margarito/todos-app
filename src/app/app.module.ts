@@ -1,3 +1,4 @@
+import { ApiDocModule } from '../api-doc/api-doc.module';
 import { SharedModule } from '../shared/shared.module';
 import { TodosModule } from '../todos/todos.module';
 import { NgModule, ErrorHandler } from '@angular/core';
@@ -23,6 +24,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   imports: [
     TodosModule,
     SharedModule,
+    ApiDocModule,
     IonicModule.forRoot(MyApp, {
        tabsHideOnSubPages: true,
        tabSubPages: false

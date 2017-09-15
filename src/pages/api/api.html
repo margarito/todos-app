@@ -1,17 +1,86 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Contact
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>
+            API Documentation
+        </ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-left></ion-icon>
-      @ionicframework
-    </ion-item>
-  </ion-list>
+    <ion-list>
+        <ion-list-header>
+            <ion-icon name="flag" item-start>
+            </ion-icon>
+            Get started
+        </ion-list-header>
+        <ion-item detail-push (click)="navToDoc('initialization')">
+            Initialization
+        </ion-item>
+        <ion-item detail-push (click)="navToDoc('modelCreation')">
+            Create model
+        </ion-item>
+    </ion-list>
+    <ion-list>
+        <ion-list-header>
+            <ion-icon name="flash" item-start>
+            </ion-icon>
+            Queries
+        </ion-list-header>
+        <ion-item detail-push (click)="navToDoc('querySelect')">
+            Select
+        </ion-item>
+        <ion-item detail-push (click)="navToDoc('queryInsert')">
+            Insert
+        </ion-item>
+        <ion-item detail-push (click)="navToDoc('queryUpdate')">
+            Update
+        </ion-item>
+        <ion-item detail-push (click)="navToDoc('queryDelete')">
+            Delete
+        </ion-item>
+        <ion-item detail-push (click)="navToDoc('queryCreate')">
+            Create
+        </ion-item>
+        <ion-item detail-push (click)="navToDoc('queryRaw')">
+            Raw
+        </ion-item>
+    </ion-list>
+    <ion-list>
+        <ion-list-header>
+            <ion-icon name="flask" item-start>
+            </ion-icon>
+            Advance query clause
+        </ion-list-header>
+        <ion-item detail-push (click)="navToDoc('clauseSyntaxic')">
+            Syntaxic clause
+        </ion-item>
+        <ion-item detail-push (click)="navToDoc('clauseGroup')">
+            Group clause
+        </ion-item>
+        <ion-item detail-push (click)="navToDoc('clauseComposite')">
+            Composite clause
+        </ion-item>
+        <ion-item detail-push (click)="navToDoc('clauseSubQuery')">
+            Sub query clause
+        </ion-item>
+    </ion-list>
+    <ion-list>
+        <ion-list-header>
+            <ion-icon name="outlet" item-start>
+            </ion-icon>
+            Connectors
+        </ion-list-header>
+        <ion-item detail-push (click)="navToDoc('connectorCordovaSqliteStorage')">
+            cordova-sqlite-storage
+        </ion-item>
+        <ion-item detail-push (click)="navToDoc('connectorWebsql')">
+            WebSQL
+        </ion-item>
+        <ion-item detail-push (click)="navToDoc('connectorCordovaSqliteStorageWebsql')">
+            cordova-sqlite-storage + WebSQL
+        </ion-item>
+        <ion-item detail-push (click)="navToDoc('connectorCreateYourOwn')">
+            Create your own connector
+        </ion-item>
+    </ion-list>
 </ion-content>

@@ -1,3 +1,4 @@
+import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { CoreModule } from '../core/core.module';
@@ -9,7 +10,8 @@ import { CommonModule } from '@angular/common';
     CommonModule,
     CoreModule,
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
   declarations: []
 })

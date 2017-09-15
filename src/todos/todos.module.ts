@@ -20,7 +20,7 @@ import { CreateTaskComponent } from './create-task/create-task.component';
     CreateCategoryComponent,
     TaskListComponent,
     CreateTaskComponent
-],
+  ],
   entryComponents: [
     CreateTodoComponent,
     CreateCategoryComponent,
